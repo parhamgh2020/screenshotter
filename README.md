@@ -1,4 +1,4 @@
-# Simple bash script to take screen shot from you ubuntu environment
+# Simple bash script to take screen shot from your ubuntu desktop
 
 ### Depency packeges
 Install them by following commands:
