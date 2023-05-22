@@ -1,13 +1,27 @@
 #!/bin/bash
-mkdir -p $(date +"%Y-%m-%d")
+
+cd ~/Pictures
+folder_name=$(date +"%Y-%m-%d")
+mkdir -p $folder_name
 
 while true
 do
     # Define the file names with the current timestamps
-    laptop_file_name="$(date +"%Y-%m-%d")/$(date '+%Y-%m-%d %H:%M:%S').png"
+    image_name="$(date '+%Y-%m-%d %H:%M:%S').jpg"
+
+    cd /tmp
 
     # Take the screenshot of the laptop display using scrot
-    scrot "$laptop_file_name" -z
+    scrot "$image_name" -z
+
+    # Resize image
+    mogrify -resize 1200x800 "$image_name"
+
+    # reduce quality
+    jpegoptim --size=50k "$image_name"
+
+    # copy to the right folder
+    cp "$image_name" ~/Pictures/$folder_name/
 
     # Wait for 1 minute before taking the next screenshot
     sleep 60
