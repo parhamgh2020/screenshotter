@@ -9,7 +9,7 @@ currenttime=$(date +%H%M)
 if [ $weekday -gt 0 ] && 
    [ $weekday -lt 6 ] && 
    [ $currenttime -gt "0859" ] && 
-   [ $currenttime -lt "1801" ]; then
+   [ $currenttime -lt "1800" ]; then
 cd ~/Pictures
 folder_name=$(date +"%Y-%m-%d")
 mkdir -p $folder_name
