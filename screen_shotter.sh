@@ -20,8 +20,8 @@ do
     # reduce quality
     jpegoptim --size=50k "$image_name"
 
-    # copy to the right folder
-    cp "$image_name" ~/Pictures/$folder_name/
+    # move to the right folder
+    mv "$image_name" ~/Pictures/$folder_name/
 
     # Wait for 1 minute before taking the next screenshot
     sleep 60
